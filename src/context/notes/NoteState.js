@@ -1,13 +1,9 @@
 import noteContext from "./noteContext"
-
+import { useState } from "react";
 const NoteState=(props)=>{
-const state={
-    "name" :"Krishna",
-    "year" :"2"
-}
-
+const[note,setNote]=useState("This is a good note");
 return (
-    <noteContext.Provider value={state}>
+    <noteContext.Provider value={{note,setNote}}>
         {props.children}
     </noteContext.Provider>
 )
