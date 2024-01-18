@@ -1,8 +1,7 @@
-
 import React  from 'react'
 import Notes from './Notes'
-export default function Home() {
 
+export default function Home() {
   return (
     <>
     <div className="container mx-30 mt-20">
