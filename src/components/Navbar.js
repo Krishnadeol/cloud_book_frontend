@@ -11,7 +11,7 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-dark bg-dark">
+    <nav className="navbar navbar-expand-lg bg-body-dark bg-dark ">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Cloud Book

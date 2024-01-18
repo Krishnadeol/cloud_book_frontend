@@ -1,11 +1,11 @@
 
-import React ,{useContext} from 'react'
-import noteContext from '../context/notes/noteContext'
+import React  from 'react'
+import Notes from './Notes'
 export default function Home() {
-  const a= useContext(noteContext);
+
   return (
     <>
-    <div className="container mx-30">
+    <div className="container mx-30 mt-20">
     <form>
   <div className="mb-3">
     <label for="exampleInputEmail1" className="form-label">Tag</label>
@@ -18,7 +18,7 @@ export default function Home() {
   </div>
   <button type="submit" className="btn btn-primary">Save</button>
 </form>
-<h1>{a.note}</h1>
+<Notes/>
 </div>
     </>
   )
