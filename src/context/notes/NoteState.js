@@ -21,9 +21,19 @@ const NoteState = (props) => {
   ];
 
   const [notes, setNote] = useState(Notes);
+  
 
+  const addNote=(title,desc,tag)=>{
+    let note=null;
+      note= {
+        id: 233,
+        title: title,
+        body: desc,
+      };
+    setNote(notes.concat(note));
+  }
   return (
-    <noteContext.Provider value={{ notes }}>
+    <noteContext.Provider value={{ notes,addNote }}>
       {props.children}
     </noteContext.Provider>
   );
