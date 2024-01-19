@@ -6,9 +6,9 @@ import { useLocation } from 'react-router-dom';
 export default function Navbar() {
   let location = useLocation();
 
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
+  // useEffect(() => {
+  //   console.log(location);
+  // }, [location]);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-dark bg-dark ">

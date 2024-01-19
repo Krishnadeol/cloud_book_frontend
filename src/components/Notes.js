@@ -10,7 +10,7 @@ function Notes() {
       <h1>My Notes  </h1>
       {notes.map((note) => (
         // Check if note is not null or undefined before rendering Notecard
-        note && <Notecard key={note.id} i={note} />
+        note && <Notecard key={note.id} note={note} />
       ))}
     </div>
   );

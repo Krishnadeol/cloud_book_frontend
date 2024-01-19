@@ -14,6 +14,8 @@ function Addnote() {
 }
 
 const handleChange=(e)=>{
+    e.preventDefault();  //for not letting the page to reload
+ 
 setNote({...note,[e.target.name]:e.target.value})  // split operator 
 }
     return (
@@ -22,12 +24,12 @@ setNote({...note,[e.target.name]:e.target.value})  // split operator
     <div className="container mx-30 my-70">
     <form>
   <div className="m-3">
-    <label htmlForfor="title" className="form-label">Title</label>
+    <label htmlFor="title" className="form-label">Title</label>
     <input type="text" className="form-control" id="title" name="title" onChange={handleChange}/>
     
   </div>
   <div className="mb-3">
-    <label htmlForor="desc" className="form-label">Note</label>
+    <label htmlFor="desc" className="form-label">Note</label>
     <input style={{height: '100px' }} className="form-control" name="desc" id="desc"  onChange={handleChange}/>
   </div>
   <button type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
