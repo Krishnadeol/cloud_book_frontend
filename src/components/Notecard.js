@@ -5,8 +5,7 @@ export default function Notecard(props) {
   const context=useContext(noteContext);
   const {deleteNote}=context;
   const {note}=props;
-
-  console.log(note);
+  const {editNote}=context;
 
   return (
     <div>
@@ -16,12 +15,12 @@ export default function Notecard(props) {
 
             <h5 className="card-title">{note.title}</h5>
             <div className="d-flex align-items-center">
-              <i className="fa-solid fa-trash mx-2" onClick={()=>deleteNote(note.id)}></i>
+              <i className="fa-solid fa-trash mx-2" onClick={()=>deleteNote(note._id)}></i>
 
-              <i className="fa-solid fa-pen-to-square mx-2"></i>
+              <i className="fa-solid fa-pen-to-square mx-2"  onClick={()=>editNote(note._id,"Krishna","Deol")}></i>
             </div>
           </div>
-          <p className="card-text ml-2">{note.body}</p>
+          <p className="card-text ml-2">{note.description}</p>
         </div>
       </div>
     </div>
