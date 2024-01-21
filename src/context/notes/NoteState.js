@@ -5,9 +5,16 @@ const NoteState = (props) => {
     const host="http://localhost:5000";
 
   const Notes = [];
-
+ 
+  const [index, setIndex] = useState(1);
+  
+  const updateIndex=()=>{
+    setIndex(index + 1);  
+  }
+ 
   const [notes, setNote] = useState(Notes);
   
+
   const getNote=async ()=>{
     const url=`${host}/notes/fetchAll`
     const response= await fetch(url,{
@@ -21,15 +28,31 @@ const NoteState = (props) => {
      console.log(json)
      setNote(json);
   }
-  const addNote=(title,desc,tag)=>{
-    let note=null;
+
+  const addNote=async(title,description,tag)=>{
+  
+    const url=`${host}/notes/addNote`
+    const response= await fetch(url,{
+      method:'POST',
+          headers:{
+          'Content-Type':'application/json',
+          'auth-token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVhMjI1ZDJmMTE2MTIxMjA1Mzc4ZWY0In0sImlhdCI6MTcwNTEyNTMzMH0.hJuVF6eoj0hL0rmhb4pXLBuFAjhfpmO7CX1ofXPkJzs'
+      
+        },
+        body: JSON.stringify({title,description})
+      })
+
+   updateIndex();
+
+   let note=null;
       note= {
-        _id: 233,
+        _id: index,
         title: title,
-        description: desc,
+        description: description,
       };
     setNote(notes.concat(note));
   }
+
 
   const deleteNote=async (id)=>{
     const url=`${host}/notes/delete/${id}`

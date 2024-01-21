@@ -8,6 +8,7 @@ export default function Notecard(props) {
   const {editNote}=context;
 
   return (
+    
     <div>
       <div className="card my-4">
         <div className="card-body">
