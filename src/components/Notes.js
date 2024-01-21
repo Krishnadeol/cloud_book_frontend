@@ -70,6 +70,9 @@ const showModal=()=>{
 
     <div className="row my-3">
       <h1>My Notes  </h1>
+    <div className="container">
+      {notes.length===0 && "No notes to display"}
+    </div>
       {notes.map((note) => (
         // Check if note is not null or undefined before rendering Notecard
         note && <Notecard key={note.id} note={note} />

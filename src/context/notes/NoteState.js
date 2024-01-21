@@ -86,18 +86,23 @@ const NoteState = (props) => {
 
    
    // for desplaying in client side
-    setNote((prevNotes) => {                      // when constant is an array , we can use map funciton to
-                                                 //  to iterate and update with useEffect hook
-      return prevNotes.map((note) =>
-        note._id === id
-          ? {
-              ...note,
-              title: title,
-              description: description,
-            }
-          : note
-      );
-    });
+                    // when constant is an array , we can use map funciton to
+                                               //  to iterate and update with useEffect hook
+
+    setTimeout(() => {
+      setNote((prevNotes) => {
+        return prevNotes.map((note) =>
+          note._id === id
+            ? {
+                ...note,
+                title: title,
+                description: description,
+              }
+            : note
+        );
+      });
+    }, 2000); // 1000 milliseconds (1 second) timeout, you can adjust this value as needed
+    
   };
   
   return (
